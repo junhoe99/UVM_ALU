@@ -4,6 +4,8 @@
 
 
 ## 🔎 Overview
+- Architecture
+<img width="6128" height="3624" alt="image" src="https://github.com/user-attachments/assets/98d33e28-3ff5-436b-ab04-81a6646e9b6f" />
 
 ## 📌 Spec Analysis
 
