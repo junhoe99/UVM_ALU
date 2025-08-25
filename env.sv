@@ -1,9 +1,9 @@
-
 class alu_env extends uvm_env;
   `uvm_component_utils(alu_env)
   
   alu_agent agnt;
   alu_scoreboard scb;
+  alu_coverage cov;  // Coverage model 추가
   
   
   //--------------------------------------------------------
@@ -11,7 +11,6 @@ class alu_env extends uvm_env;
   //--------------------------------------------------------
   function new(string name = "alu_env", uvm_component parent);
     super.new(name, parent);
-    `uvm_info("ENV_CLASS", "Inside Constructor!", UVM_HIGH)
   endfunction: new
   
   
@@ -20,22 +19,24 @@ class alu_env extends uvm_env;
   //--------------------------------------------------------
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    `uvm_info("ENV_CLASS", "Build Phase!", UVM_HIGH)
     
     agnt = alu_agent::type_id::create("agnt", this);
     scb = alu_scoreboard::type_id::create("scb", this);
+    cov = alu_coverage::type_id::create("cov", this);  // Factory 패턴 사용
     
   endfunction: build_phase
   
-  
   //--------------------------------------------------------
-  //Connect Phase
+  //Connect Phase - Enhanced with Coverage Connection
   //--------------------------------------------------------
   function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);
-    `uvm_info("ENV_CLASS", "Connect Phase!", UVM_HIGH)
     
+    // Monitor → Scoreboard 연결
     agnt.mon.monitor_port.connect(scb.scoreboard_port);
+    
+    // Monitor → Coverage 연결
+    agnt.mon.monitor_port.connect(cov.analysis_export);
     
   endfunction: connect_phase
   
