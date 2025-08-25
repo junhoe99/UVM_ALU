@@ -24,6 +24,7 @@ class alu_monitor extends uvm_monitor;
     super.build_phase(phase);
     `uvm_info("MONITOR_CLASS", "Build Phase!", UVM_HIGH)
     
+    // port 설정
     monitor_port = new("monitor_port", this);
     
     if(!(uvm_config_db #(virtual alu_interface)::get(this, "*", "vif", vif))) begin
@@ -60,9 +61,16 @@ class alu_monitor extends uvm_monitor;
       item.b = vif.b;
       item.op_code = vif.op_code;
       
-      //sample output
+      //sample outputs
       @(posedge vif.clock);
       item.result = vif.result;
+      item.carry_out = vif.carry_out;
+      
+      // Enhanced logging for debugging
+      `uvm_info("MONITOR_CLASS", 
+                $sformatf("Captured: A=%0h, B=%0h, OP=%0d, Result=%0h, Carry=%0b", 
+                         item.a, item.b, item.op_code, item.result, item.carry_out), 
+                UVM_MEDIUM)
       
       // send item to scoreboard
       monitor_port.write(item);
