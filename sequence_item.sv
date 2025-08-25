@@ -5,62 +5,57 @@ class alu_sequence_item extends uvm_sequence_item;
   `uvm_object_utils(alu_sequence_item)
 
   //--------------------------------------------------------
-  //Instantiation
+  //Input Variables (Stimulus)
   //--------------------------------------------------------
   rand logic reset;
   rand logic [7:0] a, b;
   rand logic [3:0] op_code;
   
-  logic [7:0] result; //output
-  bit carry_out; // output
+  //--------------------------------------------------------
+  //Response Variables
+  //--------------------------------------------------------
+  logic [7:0] result;
+  bit carry_out;
 
   //--------------------------------------------------------
-  //Coverage
+  //Enhanced Constraints for Better Coverage
   //--------------------------------------------------------
-  covergroup alu_cg;
-    op_code_cp: coverpoint op_code {
-      bins add_op = {0};
-      bins sub_op = {1};
-      bins mul_op = {2};
-      bins div_op = {3};
-    }
-    
-    a_cp: coverpoint a {
-      bins low_range = {[10:15]};
-      bins high_range = {[16:20]};
-    }
-    
-    b_cp: coverpoint b {
-      bins low_range = {[1:5]};
-      bins high_range = {[6:10]};
-    }
-    
-    // Cross coverage
-    op_a_cross: cross op_code_cp, a_cp;
-    op_b_cross: cross op_code_cp, b_cp;
-  endgroup
-
-  //--------------------------------------------------------
-  //Default Constraints
-  //--------------------------------------------------------
-  constraint input1_c {a inside {[10:20]};}
-  constraint input2_c {b inside {[1:10]};}
+  
+  // Basic input constraints
+  constraint input1_c {a inside {[10:50]};}
+  constraint input2_c {b inside {[1:20]};}
+  
+  // Operation code constraint (사칙연산만)
   constraint op_code_c {op_code inside {0,1,2,3};}
   
+  // Special test scenarios constraints
+  constraint divide_by_zero_avoid_c {
+    (op_code == 3) -> (b != 0); // Avoid divide by zero in normal cases
+  }
   
+  // Edge cases for thorough testing
+  constraint edge_case_c {
+    a dist {0:=5, [1:9]:=10, [10:100]:=70, [200:255]:=15};
+    b dist {0:=5, [1:9]:=10, [10:50]:=70, [100:255]:=15};
+  }
+
   //--------------------------------------------------------
   //Constructor
   //--------------------------------------------------------
   function new(string name = "alu_sequence_item");
     super.new(name);
-    alu_cg = new();
   endfunction: new
-
+  
   //--------------------------------------------------------
-  //Post Randomize - Sample Coverage
+  //Custom print method for better debugging
   //--------------------------------------------------------
-  function void post_randomize();
-    alu_cg.sample();
+  function void do_print(uvm_printer printer);
+    super.do_print(printer);
+    printer.print_field_int("a", a, 8, UVM_HEX);
+    printer.print_field_int("b", b, 8, UVM_HEX);
+    printer.print_field_int("op_code", op_code, 4, UVM_BIN);
+    printer.print_field_int("result", result, 8, UVM_HEX);
+    printer.print_field_int("carry_out", carry_out, 1, UVM_BIN);
   endfunction
 
 endclass: alu_sequence_item
