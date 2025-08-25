@@ -12,7 +12,6 @@ class alu_test extends uvm_test;
   //--------------------------------------------------------
   function new(string name = "alu_test", uvm_component parent);
     super.new(name, parent);
-    `uvm_info("TEST_CLASS", "Inside Constructor!", UVM_HIGH)
   endfunction: new
 
   
@@ -21,7 +20,6 @@ class alu_test extends uvm_test;
   //--------------------------------------------------------
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    `uvm_info("TEST_CLASS", "Build Phase!", UVM_HIGH)
 
     env = alu_env::type_id::create("env", this);
 
@@ -33,53 +31,101 @@ class alu_test extends uvm_test;
   //--------------------------------------------------------
   function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);
-    `uvm_info("TEST_CLASS", "Connect Phase!", UVM_HIGH)
 
   endfunction: connect_phase
 
   
   //--------------------------------------------------------
-  //Run Phase
+  //Run Phase - Enhanced with more comprehensive testing
   //--------------------------------------------------------
   task run_phase (uvm_phase phase);
     super.run_phase(phase);
-    `uvm_info("TEST_CLASS", "Run Phase!", UVM_HIGH)
+    $display("[TEST_CLASS] Starting ALU Verification Test!");
 
     phase.raise_objection(this);
 
-    //reset_seq
+    // Step 1: Reset sequence
+    $display("[TEST_CLASS] Step 1: Applying Reset");
     reset_seq = alu_base_sequence::type_id::create("reset_seq");
     reset_seq.start(env.agnt.seqr);
-    #10;
+    #20;
 
+    // Step 2: Basic functional tests
+    $display("[TEST_CLASS] Step 2: Basic Random Tests (100 iterations)");
     repeat(100) begin
-      //test_seq
       test_seq = alu_test_sequence::type_id::create("test_seq");
       test_seq.start(env.agnt.seqr);
       #10;
     end
     
-    // Final Coverage and Statistics Report
-    #100; // Allow final transactions to complete
-    print_final_report();
-    
+    $display("[TEST_CLASS] ALU Verification Test Completed!");
     phase.drop_objection(this);
 
   endtask: run_phase
 
-  
-  //--------------------------------------------------------
-  //Final Report Function
-  //--------------------------------------------------------
-  function void print_final_report();
-    `uvm_info("FINAL_REPORT", "========================================", UVM_LOW)
-    `uvm_info("FINAL_REPORT", "         FINAL TEST REPORT", UVM_LOW)
-    `uvm_info("FINAL_REPORT", "========================================", UVM_LOW)
-    `uvm_info("FINAL_REPORT", "Test completed successfully!", UVM_LOW)
-    `uvm_info("FINAL_REPORT", "Check scoreboard for detailed statistics", UVM_LOW)
-    `uvm_info("FINAL_REPORT", "Check coverage report for functional coverage", UVM_LOW)
-    `uvm_info("FINAL_REPORT", "========================================", UVM_LOW)
-  endfunction
-
 
 endclass: alu_test
+
+//--------------------------------------------------------
+// Enhanced Test with Directed Scenarios
+//--------------------------------------------------------
+class alu_directed_test extends uvm_test;
+
+  alu_env env;
+  alu_base_sequence reset_seq;
+  alu_add_sub_directed_sequence add_sub_seq;
+  alu_mul_div_directed_sequence mul_div_seq;
+  alu_edge_case_sequence edge_seq;
+
+  function new(string name = "alu_directed_test", uvm_component parent);
+    super.new(name, parent);
+  endfunction: new
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    env = alu_env::type_id::create("env", this);
+  endfunction: build_phase
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+  endfunction: connect_phase
+
+  task run_phase (uvm_phase phase);
+    super.run_phase(phase);
+    $display("[DIRECTED_TEST] Starting Directed ALU Test!");
+
+    phase.raise_objection(this);
+
+    // Reset
+    reset_seq = alu_base_sequence::type_id::create("reset_seq");
+    reset_seq.start(env.agnt.seqr);
+    #20;
+
+    // Directed test scenarios
+    $display("[DIRECTED_TEST] Running ADD/SUB directed tests");
+    repeat(20) begin
+      add_sub_seq = alu_add_sub_directed_sequence::type_id::create("add_sub_seq");
+      add_sub_seq.start(env.agnt.seqr);
+      #10;
+    end
+
+    $display("[DIRECTED_TEST] Running MUL/DIV directed tests");
+    repeat(20) begin
+      mul_div_seq = alu_mul_div_directed_sequence::type_id::create("mul_div_seq");
+      mul_div_seq.start(env.agnt.seqr);
+      #10;
+    end
+
+    $display("[DIRECTED_TEST] Running edge case tests");
+    repeat(10) begin
+      edge_seq = alu_edge_case_sequence::type_id::create("edge_seq");
+      edge_seq.start(env.agnt.seqr);
+      #10;
+    end
+
+    $display("[DIRECTED_TEST] Directed ALU Test Completed!");
+    phase.drop_objection(this);
+
+  endtask: run_phase
+
+endclass: alu_directed_test
