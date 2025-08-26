@@ -53,16 +53,16 @@
     - 목표 coverage에 한참 못 미치는 coverage.
       
 - **[🛠️Solution]**
-     - 1. ALU Design Debugging
+     - **ALU Design Debugging :** 
        - carry logic을 각  연산별로 올바르게 수정
        - Addition : 9bit 결과의 MSB를 carry로 사용
        - Multiplication : 16비트 결과의 9번째 비트를 carry로 사용
        - Subtraction : Borrow flag 구현
        - Division : Carry = 0 (나눗셈은 carry 미생성)
-     - 2. Assertion 타이밍 수정:
+     - **Assertion 타이밍 수정 :**
        - 지연 추가로 클럭 동기화 고려
        - Combinational logic과 clk 동기 출력 간의 타이밍 문제 해결
-     - 3. Scoreboard 수정 :
+     - **Scoreboard 수정 :**
        - Multiplication carry 계산 방식 개선
        - Subtraction borrow flag 로직 추가
       
