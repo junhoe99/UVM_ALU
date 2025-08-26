@@ -20,7 +20,7 @@
 ## 🏛️ Development Archive
 ### **Run#0**
 > Run success, EPWaveform generation success
-> <img width="630" height="160" alt="image" src="https://github.com/user-attachments/assets/94e653f8-5368-4505-b796-d9d91800fffe" />
+<img width="630" height="160" alt="image" src="https://github.com/user-attachments/assets/94e653f8-5368-4505-b796-d9d91800fffe" />
 
 - [Trouble Shooting]
     - 단순 waveform만을 활용한 timing 검증만 가능함
