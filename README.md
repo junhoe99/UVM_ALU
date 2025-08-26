@@ -22,7 +22,8 @@
 - Run success, EPWaveform generation success 
 ### **Run#1**
 - [수정 내용] : assertion, coverage 컴포넌트 추가
-  <img width="6124" height="3404" alt="image" src="https://github.com/user-attachments/assets/a1ca2e0c-eec0-4882-8abd-f02ca68a8587" />
+ <img width="4124" height="2624" alt="image" src="https://github.com/user-attachments/assets/0105fa5e-1bad-480c-9c7c-33bd88d892e1" />
+
 
 - [문제점]
 - [개선 방안]
