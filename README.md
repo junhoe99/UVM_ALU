@@ -19,13 +19,17 @@
 
 ## 🏛️ Development Archive
 ### **Run#0**
-- Run success, EPWaveform generation success 
+- Run success, EPWaveform generation success
+- [Trouble Shooting]
+ - 단순 waveform만을 활용한 timing 검증만 가능함
+- [개선 방안]
+ - assertion, coverage 컴포넌트 추가를 통해 SVA, CDV 검증 환경 구축 
 ### **Run#1**
 - [수정 내용] : assertion, coverage 컴포넌트 추가
  <img width="3000" height="1500" alt="image" src="https://github.com/user-attachments/assets/0105fa5e-1bad-480c-9c7c-33bd88d892e1" />
 
 
-- [문제점]
+- [Trouble Shooting]
 - [개선 방안]
 
 ## ✨ Verification Results
