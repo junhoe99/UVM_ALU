@@ -39,8 +39,8 @@
 > CDV, SVA 검증 환경 구축
 
 - **[☑️Overview]**
-- assertion, coverage 컴포넌트 추가
- <img width="3000" height="1500" alt="image" src="https://github.com/user-attachments/assets/0105fa5e-1bad-480c-9c7c-33bd88d892e1" />
+    - assertion, coverage 컴포넌트 추가
+     <img width="3000" height="1500" alt="image" src="https://github.com/user-attachments/assets/0105fa5e-1bad-480c-9c7c-33bd88d892e1" />
 
 
 - **[❌Trouble Shooting]**
