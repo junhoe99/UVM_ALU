@@ -51,7 +51,7 @@
     - Multiplication Overflow 문제
          - 15 x 11 = 165(8비트 초과)에서 carry =1 이어야 하는데 carry =0으로 출력       
     - 목표 coverage에 한참 못 미치는 coverage.
-    - 
+      
 - **[🛠️Solution]**
      - 1. ALU Design Debugging
        - carry logic을 각  연산별로 올바르게 수정
