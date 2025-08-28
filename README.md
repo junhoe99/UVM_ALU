@@ -32,9 +32,11 @@
     
 - **[🛠️Solution]**
      - assertion, coverage 컴포넌트 추가
+     - Directed scenario를 추가해 다양한 case에 대한 검증 수행
 
 - **[🎯Expecting Improvement]**
     -  SVA, CDV 검증 환경 구축
+  
 ### **Run#1**
 > CDV, SVA 검증 환경 구축
 
