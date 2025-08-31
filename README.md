@@ -74,15 +74,15 @@
 
 
 - **[🛠️Solution]**
-     - **ALU Design Debugging :** carry logic 분리, borrow flag 구현  
-     - **Assertion 타이밍 수정 :** clk 동기화 고려  
-     - **Scoreboard 수정 :** carry 계산 방식 개선  
+     - **1. ALU Design Debugging :** 연산별로 Carry 계산 logic 분리
+     - **2. sequence_item의 input 및 op code값에 대한 Constraint 완화 :**
+     - **3. Assertion 타이밍 수정 :** clk 동기화 고려  
+     - **4. Directed Test추가**  
       
 - **[🎯Expecting Improvement]**
     -  Assertion failures 감소
     -  Carry Mismatch 오류 해결
-    -  Coverage 목표(90%) 달성
-    -  Pass rate(95%) 달성
+    -  Functional Coverage 목표(90%) 달성
 
 ---
 
