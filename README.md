@@ -50,6 +50,7 @@
     - **Functional Coverage**가 너무 낮음
        - Carry가 발생하는 것을 좀더 가시적으로 확인하고자 sequence_item에서 a, b, op_code의 값을 제한.
              <img width="554" height="130" alt="image" src="https://github.com/user-attachments/assets/3d369c71-e8a1-4a11-a0bb-0428e9237b1e" />
+             
        - 이로 인해 각 Input에 대한 coverage가 낮은 수치로 측정됨.
              <img width="479" height="255" alt="image" src="https://github.com/user-attachments/assets/061126f9-c53d-4eda-ad72-e305b3b8ee9c" />
 
@@ -62,6 +63,7 @@
          - 하지만 현재 ALU_OUT은 8bit로 선언되어 있어서 나머지 자릿수의 값이 Truncation
          - EX) VCS 시뮬레이션에서 63 X 229의 곱셈 결과값 Truncation현상
               <img width="247" height="104" alt="image" src="https://github.com/user-attachments/assets/1b93a723-30cb-4b81-8e3d-b523733f0fda" />
+              
               <img width="277" height="236" alt="image" src="https://github.com/user-attachments/assets/41388676-3d64-40c4-9b00-35a084a4cfb7" />
 
     - 목표 coverage에 한참 못 미치는 coverage.
@@ -98,6 +100,7 @@
     - Functional Coverage가 너무 낮음
        - Carry가 발생하는 것을 좀더 가시적으로 확인하고자 sequence_item에서 a, b, op_code의 값을 제한.
              <img width="554" height="130" alt="image" src="https://github.com/user-attachments/assets/3d369c71-e8a1-4a11-a0bb-0428e9237b1e" />
+             
        - 이로 인해 각 Input에 대한 coverage가 낮은 수치로 측정됨.
              <img width="479" height="255" alt="image" src="https://github.com/user-attachments/assets/061126f9-c53d-4eda-ad72-e305b3b8ee9c" />
 
