@@ -87,7 +87,7 @@
 ---
 
 ### **Run#2**
-> Functional Coverage 수정, DUT의 RTL 코드 디버깅  
+> Directed Test 추가를 통한 Functional Coverage 개선, DUT의 RTL 코드 디버깅  
 
 - **[☑️Overview]**
     - Functional Coverage ~% 개선
