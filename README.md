@@ -61,7 +61,8 @@
 - **[❌Trouble Shooting]**
     - **Functional Coverage**가 너무 낮음  
       <img src="https://github.com/user-attachments/assets/3d369c71-e8a1-4a11-a0bb-0428e9237b1e" width="550" />  
-      <img src="https://github.com/user-attachments/assets/061126f9-c53d-4eda-ad72-e305b3b8ee9c" width="480" />
+      <img width="462" height="436" alt="1" src="https://github.com/user-attachments/assets/5d717f31-679e-409c-a158-1a7db53237d3" />
+
       
     - **Carry Flag logic 오류(Most critical)**
         - Multplication 동작에서도 ADD carry가 적용되어서 올바르지 않은 값이 출력됨. 
