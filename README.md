@@ -92,14 +92,6 @@
     - Functional Coverage ~% 개선
     - Multiplication Result Truncation 해결
 
-- **[❌Trouble Shooting]**
-    - Functional Coverage 낮음  
-      <img src="https://github.com/user-attachments/assets/3d369c71-e8a1-4a11-a0bb-0428e9237b1e" width="550" />  
-      <img src="https://github.com/user-attachments/assets/061126f9-c53d-4eda-ad72-e305b3b8ee9c" width="480" />
-
-    - Carry Flag logic 오류(Most critical)
-    - Assertion 타이밍 문제
-    - Multiplication Overflow 문제
       
 - **[🛠️Solution]**
      - **ALU Design Debugging :** 각 연산별 carry 로직 수정  
@@ -115,7 +107,18 @@
 ---
 
 ## ✨ Verification Results
-
+   - **1. 최종 Functional Coverage 값 :**
+   - **2. 각 연산별 Edge Case(Simulation 기반) :**
+       - Addition (op_code == 0)
+       - Subtraction (op_code == 1)
+       - Multiplication (op_code == 2)
+       - Division  (op_code == 3)
+    
+   - **3. SVA기반 ALU 프로토콜 검증 :**
+        - Addition (op_code == 0)
+       - Subtraction (op_code == 1)
+       - Multiplication (op_code == 2)
+       - Division  (op_code == 3)
 ---
 
 ## 🔥 Insights
