@@ -90,20 +90,17 @@
 > Directed Test 추가를 통한 Functional Coverage 개선, DUT의 RTL 코드 디버깅  
 
 - **[☑️Overview]**
-    - Functional Coverage ~% 개선
+    - Functional Coverage 89%로 개선
+        - 다양한 test scenario들을 세분화하여 추가함으로써, functional coverage 개선 
+         <img width="396" height="551" alt="2" src="https://github.com/user-attachments/assets/b0caa66c-7c5e-4774-8751-022a698f1ef5" />
+
     - Multiplication Result Truncation 해결
+        - 기존 8bit였던 ALU_OUT값을 16bit로 확장해서, MULTI값이 truncation 되는 현상을 개선 
+         <img width="292" height="460" alt="image" src="https://github.com/user-attachments/assets/9b172853-f64a-474c-9fcb-ce96bafa1665" />
+
 
       
-- **[🛠️Solution]**
-     - **ALU Design Debugging :** 각 연산별 carry 로직 수정  
-     - **Assertion 타이밍 수정 :** 지연 추가  
-     - **Scoreboard 수정 :** carry/borrow 계산 개선  
-      
-- **[🎯Expecting Improvement]**
-    -  Assertion failures 감소
-    -  Carry Mismatch 오류 해결
-    -  Coverage 목표(90%) 달성
-    -  Pass rate(95%) 달성
+
 
 ---
 
