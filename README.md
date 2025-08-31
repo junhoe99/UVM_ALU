@@ -47,6 +47,12 @@
 
 
 - **[❌Trouble Shooting]**
+    - Functional Coverage가 너무 낮음
+       - Carry가 발생하는 것을 좀더 가시적으로 확인하고자 sequence_item에서 a, b, op_code의 값을 제한.
+             <img width="554" height="130" alt="image" src="https://github.com/user-attachments/assets/3d369c71-e8a1-4a11-a0bb-0428e9237b1e" />
+       - 이로 인해 각 Input에 대한 coverage가 낮은 수치로 측정됨.
+             <img width="479" height="255" alt="image" src="https://github.com/user-attachments/assets/061126f9-c53d-4eda-ad72-e305b3b8ee9c" />
+
     - Carry Flag logic 오류(Most critical)
        - 모든 연산에서도 add carry가 적용되어 잘못된 carry 값이 출력
     - Assertion 타이밍 문제
