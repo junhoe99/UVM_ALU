@@ -63,14 +63,15 @@
       <img src="https://github.com/user-attachments/assets/3d369c71-e8a1-4a11-a0bb-0428e9237b1e" width="550" />  
       <img src="https://github.com/user-attachments/assets/061126f9-c53d-4eda-ad72-e305b3b8ee9c" width="480" />
       
-    - **Carry Flag logic 오류(Most critical)**  
+    - **Carry Flag logic 오류(Most critical)**
+        - Multplication 동작에서도 ADD carry가 적용되어서 올바르지 않은 값이 출력됨. 
     - **Assertion 타이밍 문제**  
     - **Multiplication Truncation 문제**  
       <img src="https://github.com/user-attachments/assets/1b93a723-30cb-4b81-8e3d-b523733f0fda" width="250" />  
       <img src="https://github.com/user-attachments/assets/41388676-3d64-40c4-9b00-35a084a4cfb7" width="280" />
 
-    - 목표 coverage에 한참 못 미치는 coverage.
-      
+
+
 - **[🛠️Solution]**
      - **ALU Design Debugging :** carry logic 분리, borrow flag 구현  
      - **Assertion 타이밍 수정 :** clk 동기화 고려  
