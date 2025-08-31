@@ -105,18 +105,7 @@
 ---
 
 ## ✨ Verification Results
-   - **1. 최종 Functional Coverage 값 :**
-   - **2. 각 연산별 Edge Case(Simulation 기반) :**
-       - Addition (op_code == 0)
-       - Subtraction (op_code == 1)
-       - Multiplication (op_code == 2)
-       - Division  (op_code == 3)
-    
-   - **3. SVA기반 ALU 프로토콜 검증 :**
-        - Addition (op_code == 0)
-       - Subtraction (op_code == 1)
-       - Multiplication (op_code == 2)
-       - Division  (op_code == 3)
----
+   - **최종 Functional Coverage 값 :**
+        <img width="396" height="551" alt="2" src="https://github.com/user-attachments/assets/b0caa66c-7c5e-4774-8751-022a698f1ef5" />
 
-## 🔥 Insights
+---
