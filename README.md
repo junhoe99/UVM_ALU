@@ -75,8 +75,7 @@
 
 - **[🛠️Solution]**
      - **1. ALU Design Debugging :** 연산별로 Carry 계산 logic 분리
-     - **2. Bit값 확장 :** 기존 8bit였던 ALU_Out을 16bit로 확장하여 Multiplication 결과값의 truncation 문제 해결
-     - **3.sequence_item의 input 및 op code값에 대한 Constraint 완화 :**
+     - **2.sequence_item의 input 및 op code값에 대한 Constraint 완화 :**
      - **3. Assertion 타이밍 수정 :** clk 동기화 고려  
      - **4. Directed Test추가**  
       
