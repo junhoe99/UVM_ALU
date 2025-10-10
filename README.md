@@ -106,6 +106,7 @@
 
 ## ✨ Verification Results
    - **최종 Functional Coverage 값 :**
-        -<img width="396" height="551" alt="2" src="https://github.com/user-attachments/assets/b0caa66c-7c5e-4774-8751-022a698f1ef5" />
+        -
+         <img width="396" height="551" alt="2" src="https://github.com/user-attachments/assets/b0caa66c-7c5e-4774-8751-022a698f1ef5" />
 
 ---
